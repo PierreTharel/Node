@@ -31,6 +31,10 @@ app.get('/musics/:id', (req, res) => {
     }
 })
 
+app.put('/musics/:id', (req, res) => {
+    res.send(musics)
+})
+
 
 app.post('/musics', (req, res) => {
     let {name, author, genre} = req.body
@@ -51,6 +55,7 @@ app.post('/musics', (req, res) => {
         return res.status(500).json({ message : 'Internal server error'})
     }
 })
+
 
 
 app.listen(PORT, () => console.log(`Server is running on port ${PORT} 🟢`))
